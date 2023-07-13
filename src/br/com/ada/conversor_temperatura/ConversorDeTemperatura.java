@@ -1,4 +1,4 @@
-package br.com.ada.hello;
+package br.com.ada.conversor_temperatura;
 
 import java.util.Scanner;
 
