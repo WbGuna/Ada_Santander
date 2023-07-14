@@ -7,7 +7,7 @@ public class ConversorDeTemperatura {
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
 		
-		System.out.println("Digite a temperatura em graus Fahrenheit: ");
+		System.out.print("Digite a temperatura em graus Fahrenheit: ");
 		
 		double fahrenheit = sc.nextDouble();
 		double celsius = fahrenheitParaCelsius(fahrenheit);
