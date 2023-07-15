@@ -6,7 +6,7 @@ import java.text.DecimalFormat;
 public class Frutas {
     public static void main(String[] args) {
         String[] frutas = {"Pera", "Laranja", "Maçã", "Tomate", "Caqui"};
-        int[] quantidade = new int[5];
+        int[] quantidade = new int[frutas.length];
         double total = 0;
         Scanner sc = new Scanner(System.in);
         DecimalFormat df = new DecimalFormat("#.##");
