@@ -102,5 +102,4 @@ public class Ordenacao {
 	    }
 	    return array2;
 	}
-
 }
