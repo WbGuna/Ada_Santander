@@ -14,6 +14,14 @@ public class Aula_3_exercicio_6 {
 	    return Math.sqrt(s * (s - a) * (s - b) * (s - c));
 	}
 	
+	public static double verificarTriangulo(double a, double b, double c) {
+        if (a + b > c && a + c > b && b + c > a) {
+            return calcularArea(a, b, c);
+        } else {
+            return 0;
+        }
+    }
+	
     public static void lerTriangulo() {
         Scanner sc = new Scanner(System.in);
         System.out.println("Digite o comprimento do lado a: ");
@@ -22,7 +30,12 @@ public class Aula_3_exercicio_6 {
         double b = sc.nextDouble();
         System.out.println("Digite o comprimento do lado c: ");
         double c = sc.nextDouble();
-        System.out.printf("A área do triângulo é: %.2f\n", calcularArea(a, b, c));
+        double area = verificarTriangulo(a, b, c);
+        if (area > 0) {
+            System.out.printf("A área do triângulo é: %.2f\n", area);
+        } else {
+        	System.out.printf("Os valores fornecidos não formam um triangulo!");
+        }
         sc.close();
     }	
 }
