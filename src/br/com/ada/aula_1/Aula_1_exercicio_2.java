@@ -1,8 +1,8 @@
-package br.com.ada.conversor_temperatura;
+package br.com.ada.aula_1;
 
 import java.util.Scanner;
 
-public class ConversorDeTemperatura {
+public class Aula_1_exercicio_2 {
 
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);

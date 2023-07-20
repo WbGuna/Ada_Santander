@@ -1,8 +1,8 @@
-package br.com.ada.ordenacao;
+package br.com.ada.aula_2;
 
 import java.util.Arrays;
 
-public class Ordenacao {
+public class Aula_2_exercicio_2 {
 
 	public static void main(String[] args) {
 		int[] numbers = {5, 4, 1, 2, 3, 8, 7, 9, 6};

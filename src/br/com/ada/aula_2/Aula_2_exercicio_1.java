@@ -1,9 +1,9 @@
-package br.com.ada.frutas;
+package br.com.ada.aula_2;
 
 import java.util.Scanner;
 import java.text.DecimalFormat;
 
-public class Frutas {
+public class Aula_2_exercicio_1 {
     public static void main(String[] args) {
         String[] frutas = {"Pera", "Laranja", "Maçã", "Tomate", "Caqui"};
         int[] quantidade = new int[frutas.length];
