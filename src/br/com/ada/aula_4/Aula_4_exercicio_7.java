@@ -1,5 +1,7 @@
 package br.com.ada.aula_4;
 
+import br.com.ada.exception.LadosInvalidosException;
+
 public class Aula_4_exercicio_7 {
 
 	public static void main(String[] args) {
