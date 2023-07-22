@@ -3,6 +3,9 @@ package br.com.ada.aula_5;
 import java.text.DecimalFormat;
 import java.util.Scanner;
 
+import br.com.ada.exception.FrutasZeradasException;
+import br.com.ada.exception.QuantidadeNegativaFrutasException;
+
 public class Aula_5_exercicio_1 {
 
 	public static void main(String[] args) {
@@ -33,7 +36,7 @@ public class Aula_5_exercicio_1 {
 
 	public static void verificarQuantidadeNegativa(int quantidade) {
 		if (quantidade < 0) {
-			throw new IllegalArgumentException("Quantidade não pode ser negativa.");
+			throw new QuantidadeNegativaFrutasException("Quantidade não pode ser negativa.");
 		}
 	}
 
@@ -46,7 +49,7 @@ public class Aula_5_exercicio_1 {
 			}
 		}
 		if (todasZero) {
-			throw new IllegalArgumentException("Você deve comprar pelo menos uma fruta.");
+			throw new FrutasZeradasException("Você deve comprar pelo menos uma fruta.");
 		}
 	}
 
