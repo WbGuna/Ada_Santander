@@ -6,7 +6,7 @@ import java.util.Locale;
 
 import br.com.ada.enuns.Estado;
 
-public class Aula_6_exercicio1 {
+public class Aula_6_exercicio_1 {
 	public static void main(String[] args) {
 
 		System.out.println(valorProdutoFinal(250.10, Estado.MG) == 267.607);
