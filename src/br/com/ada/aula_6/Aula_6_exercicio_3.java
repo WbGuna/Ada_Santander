@@ -84,7 +84,7 @@ public class Aula_6_exercicio_3 {
     
     public static void iniciaNovaCaixa() {
     	  System.out.println("");
-          System.out.println("============================================");
+          System.out.println("**============================================**");
           System.out.println("");
     }
 }
