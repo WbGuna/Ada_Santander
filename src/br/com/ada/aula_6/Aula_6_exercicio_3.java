@@ -1,27 +1,91 @@
 package br.com.ada.aula_6;
 
 import br.com.ada.enuns.Semana;
+import java.util.Scanner;
 
 public class Aula_6_exercicio_3 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        boolean sair = false;
+        while (!sair) {
+            System.out.println("Escolha um dia da semana:");
+            System.out.println("1. Domingo");
+            System.out.println("2. Segunda-feira");
+            System.out.println("3. Terça-feira");
+            System.out.println("4. Quarta-feira");
+            System.out.println("5. Quinta-feira");
+            System.out.println("6. Sexta-feira");
+            System.out.println("7. Sábado");
+            System.out.println("8. Sair do programa");
 
-	public static void main(String[] args) {
-		System.out.println(fromString("domingo"));
-		System.out.println(fromString("segunda-feira"));
-		System.out.println(fromString("terça-feira"));
-		System.out.println(fromString("quarta-feira"));
-		System.out.println(fromString("quinta-feira"));
-		System.out.println(fromString("sexta-feira"));
-		System.out.println(fromString("sábado"));
-		System.out.println(fromString("teste"));
-	}
+            int opcao = 0;
+            boolean opcaoValida = false;
+            while (!opcaoValida) {
+                try {
+                    opcao = Integer.parseInt(scanner.nextLine());
+                    opcaoValida = true;
+                } catch (NumberFormatException e) {
+                    System.out.println("Opção inválida. Digite um número inteiro.");
+                    iniciaNovaCaixa();
+                }
+            }
 
-	public static Semana fromString(String name) {
-		for (Semana dia : Semana.values()) {
-			if (dia.getName().equalsIgnoreCase(name)) {
-				return dia;
-			}
-		}
-		throw new IllegalArgumentException("Nome inválido: " + name);
-	}
+            String diaEscolhido = null;
+            switch (opcao) {
+                case 1:
+                    diaEscolhido = "domingo";
+                    break;
+                case 2:
+                    diaEscolhido = "segunda-feira";
+                    break;
+                case 3:
+                    diaEscolhido = "terça-feira";
+                    break;
+                case 4:
+                    diaEscolhido = "quarta-feira";
+                    break;
+                case 5:
+                    diaEscolhido = "quinta-feira";
+                    break;
+                case 6:
+                    diaEscolhido = "sexta-feira";
+                    break;
+                case 7:
+                    diaEscolhido = "sábado";
+                    break;
+                case 8:
+                    sair = true;
+                    break;
+                default:
+                    System.out.println("Opção inválida. Tente novamente.");
+                    iniciaNovaCaixa();
+            }
+            if (diaEscolhido != null) {
+                try {
+                    Semana dia = fromString(diaEscolhido);
+                    System.out.println("Você escolheu: " + dia);
+                    iniciaNovaCaixa();
+                } catch (IllegalArgumentException e) {
+                    System.out.println(e.getMessage());
+                }
+            }
+        }
+        scanner.close();
+    }
 
+    public static Semana fromString(String name) {
+        for (Semana dia : Semana.values()) {
+            if (dia.getName().equalsIgnoreCase(name)) {
+                return dia;
+            }
+        }
+        throw new IllegalArgumentException("Nome inválido: " + name);
+    }
+    
+    public static void iniciaNovaCaixa() {
+    	  System.out.println("");
+          System.out.println("============================================");
+          System.out.println("");
+    }
 }
+
