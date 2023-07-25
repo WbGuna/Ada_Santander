@@ -54,6 +54,30 @@ public class Aula_4_exercicio_3 {
             return "D";
         }
     }
+    
+    public static String geraRecibo(double[] input){
+        double total = 0.0;
+        double discount = 0.0;
+        double toPay = 0.0;
+        
+        for (int i = 0; i < input.length; i++) {
+            total += input[i];
+        }
+        
+        if (input.length >= 2) {
+            double min = input[0];
+            for (int i = 1; i < input.length; i++) {
+                if (input[i] < min) {
+                    min = input[i];
+                }
+            }
+            discount = min / 2;
+        }
+        
+        toPay = total - discount;
+        
+        return "Valor total: " + total + " | Valor de descontos: " + discount + " | Valor a pagar: " + toPay;
+    }
 }
 
 
