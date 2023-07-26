@@ -8,16 +8,7 @@ public class Aula_6_exercicio_3 {
         Scanner scanner = new Scanner(System.in);
         boolean sair = false;
         while (!sair) {
-            System.out.println("Escolha um dia da semana:");
-            System.out.println("1. Domingo");
-            System.out.println("2. Segunda-feira");
-            System.out.println("3. Terça-feira");
-            System.out.println("4. Quarta-feira");
-            System.out.println("5. Quinta-feira");
-            System.out.println("6. Sexta-feira");
-            System.out.println("7. Sábado");
-            System.out.println("8. Sair do programa");
-
+            menu();
             int opcao = 0;
             boolean opcaoValida = false;
             while (!opcaoValida) {
@@ -62,7 +53,7 @@ public class Aula_6_exercicio_3 {
             }
             if (diaEscolhido != null) {
                 try {
-                    Semana dia = fromString(diaEscolhido);
+                    Semana dia = Semana.descricaoEnum(diaEscolhido);
                     System.out.println("Você escolheu: " + dia);
                     iniciaNovaCaixa();
                 } catch (IllegalArgumentException e) {
@@ -72,20 +63,23 @@ public class Aula_6_exercicio_3 {
         }
         scanner.close();
     }
-
-    public static Semana fromString(String name) {
-        for (Semana dia : Semana.values()) {
-            if (dia.getName().equalsIgnoreCase(name)) {
-                return dia;
-            }
-        }
-        throw new IllegalArgumentException("Nome inválido: " + name);
-    }
-    
+  
     public static void iniciaNovaCaixa() {
     	  System.out.println("");
           System.out.println("**============================================**");
           System.out.println("");
+    }
+    
+    public static void menu() {
+    	 System.out.println("Escolha um dia da semana:");
+         System.out.println("1. Domingo");
+         System.out.println("2. Segunda-feira");
+         System.out.println("3. Terça-feira");
+         System.out.println("4. Quarta-feira");
+         System.out.println("5. Quinta-feira");
+         System.out.println("6. Sexta-feira");
+         System.out.println("7. Sábado");
+         System.out.println("8. Sair do programa");
     }
 }
 
