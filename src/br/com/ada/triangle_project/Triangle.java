@@ -43,7 +43,9 @@ public class Triangle {
     }
 
     public static double calculateCircumradius(double a, double b, double c) {
-        return round((a * b * c) / (4 * calculateArea(a, b, c)));
+        double inradius = Math.floor(calculateInradius(a, b, c) * 100) / 100;
+        double semiperimeter = calculateSemiperimeter(a, b, c);
+        return round((a * b * c) / (4 * inradius * semiperimeter));
     }
 
     public static double[] calculateMedians(double a, double b, double c) {
